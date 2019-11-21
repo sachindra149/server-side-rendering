@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css?family=Barlow:300,400,500&display=swap');
+
+* {
+	box-sizing: border-box;
+	padding: 0px;
+	margin: 0px;
+}
+.fullHeight {
+	height: 100%;
+}
+.fullWidth {
+	float: left;
+	width: 100%;
+}
+.textEllipsis {
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+body, html {
+	width: 100%;
+	font-family: 'Barlow', sans-serif;
+	-webkit-font-smoothing: antialiased;
+	@extend .fullHeight;
+}
+#react-app {
+	@extend .fullHeight;
+}
+body {
+	background: #fafbfc;
+	color: #000000;
+}
+.overflowHide {
+	overflow: hidden;
+}
+.container {
+	width: 1200px;
+	max-width: 90%;
+	margin: 0 auto;
+	@extend .fullHeight;
+}
+header {
+	text-align: center;
+	padding-top: 2.5%;
+	img {
+		height: 100px;
+	}
+}
+section {
+	padding-bottom: 100px;
+	ul {
+		padding: 0px;
+		margin: 0px;
+		list-style: none;
+		@extend .fullWidth;
+		li {
+			list-style: none;
+			float: left;
+			margin: 2.5% 2.5% 0px 2.5%;
+			border: 1px solid #d8d6d6;
+			position: relative;
+			@media only screen and (min-width: 600px) {
+				width: 28.33%;
+			}
+			img {
+				max-width: 100%;
+			}
+			p {
+				padding: 15px;
+				font-weight: 500;
+				font-size: 1.5em;
+				@extend .textEllipsis;
+			}
+			> div {
+				position: absolute;
+				right: 0;
+				top: 0;
+				background: #ffffff;
+				padding: 7px;
+			}
+			a {
+				&:not(.link) {
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					background: rgba(0, 0, 0, 0.05);
+					display: none;
+				}
+			}
+			&:hover {
+				a {
+					&:not(.link) {
+						display: block;
+					}
+				}
+			}
+		}
+	}
+}
+footer {
+	position: fixed;
+	left: 0px;
+	bottom: 0px;
+	background: #000000;
+	color: #ffffff;
+	text-align: center;
+	padding: 10px 0px;
+	p {
+		margin: 0px;
+		line-height: 25px;
+		font-size: 0.9em;
+	}
+}
+.detailsPopup {
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	top: 0px;
+	left: 0px;
+	background: rgba(0, 0, 0, 0.5);
+	display: flex;
+    justify-content: center;
+    align-items: center;
+	padding: 0;
+	z-index: 1;
+	.detailsPopupContainer {
+		width: 1000px;
+		max-width: 90%;
+		background: #ffffff;
+		border-radius: 4px;
+		position: relative;
+		padding-bottom: 25px;
+		.detailsBanner {
+			position: absolute;
+			width: 100%;
+			height: 200px;
+			background-size: cover;
+			background-position: center center;
+			border-radius: 4px 4px 0px 0px;
+		}
+		.detailsHeaderImage {
+			float: left;
+			position: relative;
+			width: 250px;
+			border-radius: 4px;
+			border: 8px solid #ffffff;
+			box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+			@media only screen and (max-width: 767px) {
+				width: 100%;
+			}
+			img {
+				max-width: 100%;
+			}
+		}
+		.detailsHeaderBlock {
+			float: left;
+			width: 100%;
+			padding: 3% 3% 3% 3%;
+		}
+		.detailsHeaderName {
+			float: left;
+			position: relative;
+			padding-top: 195px;
+			padding-left: 30px;
+			font-size: 2em;
+			@media only screen and (max-width: 767px) {
+				width: 100%;
+				padding: 20px 0px 0px 0px;
+				text-align: center;
+			}
+		}
+		.atheleteDetails {
+			padding: 0px 3.5%;
+			h3 {
+				font-weight: 500;
+				padding: 10px 0px 0px 0px;
+			}
+			ul {
+				padding: 10px 0px 0px 0px;
+				overflow-y: auto;
+				max-height: 30vh;
+				li {
+					float: none;
+					margin: 0;
+					padding: 0;
+					border: 0;
+					width: 100%;
+					line-height: 25px;
+					padding-bottom: 5px!important;
+					span {
+						border-radius: 50%;
+						display: inline-block;
+						font-size: .8em;
+						height: 20px;
+						justify-content: center;
+						margin: 0px 8px 0px 0px;
+						text-align: center;
+						width: 20px;
+						line-height: 18px;
+						
+						&.G {
+							color:#daa520;
+							background-color:#fff6de;
+							border: 1px solid#daa520;
+						}
+						&.S {
+							color:#383738;
+							background-color:#b9b5b5;
+							border: 1px solid#383738;
+						}
+						&.B {
+							color:#6b1919;
+							background-color:#ea96a1;
+							border: 1px solid#6E1924;
+						}
+					}
+				}
+			}
+		}
+		a {
+			color: #e36209;
+			text-decoration: none;
+			&:hover, &:focus {
+				text-decoration: none;
+			}
+			&.hideDetails {
+				width: 30px;
+				height: 30px;
+				display: block;
+				right: -10px;
+				left: auto;
+				background: #ffffff;
+				border-radius: 50%;
+				top: -10px;
+				position: absolute;
+				&:before, &:after {
+					content: "";
+					height: 1px;
+					background: #000000;
+					transform: rotate(-45deg);
+					width: 15px;
+					position: absolute;
+					right: 7px;
+					top: 14px;
+				}
+				&:after {
+					transform: rotate(45deg);
+				}
+			}
+		}
+	}
+}
