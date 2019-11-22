@@ -30,22 +30,23 @@ class Atheletes extends Component {
 	}
 
 	render() {
+		let imageUrl = window.location.href.indexOf('http://localhost:') > -1 ? `../src/` : `./dist/`;
 		return (
 			<section className="fullWidth">
 				<ul>
 					{
 						athletes.map((item) =>
 							<li key={item.id}>
-								<img src={`../src/img/${item.image}`} alt={item.name} title={item.name} />
+								<img src={`${imageUrl}img/${item.image}`} alt={item.name} title={item.name} />
 								<p>{item.name}</p>
-								<div><img src="../src/img/medal.png" alt="Medals Won" title="Medals Won" />{item.medals.length}</div>
+								<div><img src={`${imageUrl}img/medal.png`} alt="Medals Won" title="Medals Won" />{item.medals.length}</div>
 								<a href="#" onClick={() => this.showDetails(item.id)}></a>
 							</li>
 						)
 					}
 				</ul>
 				{
-					this.state.showDetails ? <AtheleteDetails data={this.state.popupData} hidePopupDetails={() => this.hideDetails()} /> : ''
+					this.state.showDetails ? <AtheleteDetails data={this.state.popupData} hidePopupDetails={() => this.hideDetails()} imageUrl={imageUrl} /> : ''
 				}
 			</section>
 		)

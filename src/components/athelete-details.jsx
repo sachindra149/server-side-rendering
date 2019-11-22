@@ -9,7 +9,7 @@ class AtheleteDetails extends Component {
 
 	render() {
 		const bgObj = {
-			backgroundImage: `url('../src/img/${this.props.data.cover}')`,
+			backgroundImage: `url('${this.props.imageUrl}img/${this.props.data.cover}')`,
 			backgroundRepeat: 'no-repeat'
 		}
 		return (
@@ -19,7 +19,7 @@ class AtheleteDetails extends Component {
 						<div className="detailsBanner" style={bgObj}>&nbsp;</div>
 						<div className="detailsHeaderBlock">
 							<div className="detailsHeaderImage">
-								<img src={`../src/img/${this.props.data.image}`} alt={`${this.props.data.name}`} title={`${this.props.data.name}`} />
+								<img src={`${this.props.imageUrl}img/${this.props.data.image}`} alt={`${this.props.data.name}`} title={`${this.props.data.name}`} />
 							</div>
 							<div className="detailsHeaderName">{`${this.props.data.name}`}</div>
 						</div>
