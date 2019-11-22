@@ -27,7 +27,7 @@ class Flag extends Component {
 	render() {
 		return (
 			<span>
-				<img src={`../src/img/${flagsList[this.props.country].icon}`} alt={`${flagsList[this.props.country].name}`} title={`${flagsList[this.props.country].name}`} /> {`${flagsList[this.props.country].name}`}
+				<img src={`${this.props.imageUrl}img/${flagsList[this.props.country].icon}`} alt={`${flagsList[this.props.country].name}`} title={`${flagsList[this.props.country].name}`} /> {`${flagsList[this.props.country].name}`}
 			</span>
 		)
 	}

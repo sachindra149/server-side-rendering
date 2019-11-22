@@ -25,7 +25,7 @@ class AtheleteDetails extends Component {
 						</div>
 					</div>
 					<div className="fullWidth atheleteDetails">
-						<h3>Olympic medalist from <Flag country={this.props.data.country} />, born in {this.props.data.birth} (Find out more on <a href={`${this.props.data.link}`} target="_blank" className="link">Wikipedia</a>).</h3>
+						<h3>Olympic medalist from <Flag country={this.props.data.country} imageUrl={this.props.imageUrl} />, born in {this.props.data.birth} (Find out more on <a href={`${this.props.data.link}`} target="_blank" className="link">Wikipedia</a>).</h3>
 						<h3>Winner of {this.props.data.medals.length} medals:</h3>
 						<ul>
 							{
